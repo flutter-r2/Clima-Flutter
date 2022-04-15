@@ -21,5 +21,8 @@ class Location {
     } catch (e) {
       print(e);
     }
+
+    print(lat);
+    print(lon);
   }
 }
