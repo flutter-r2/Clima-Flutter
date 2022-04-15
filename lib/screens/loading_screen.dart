@@ -25,11 +25,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
     Location location = Location();
     await location.fetchLocation();
 
-    lat = location.lat;
-    lon = location.lon;
-
     NetworkHelper networkHelper = NetworkHelper(
-        'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apiKey&units=metric');
+        'https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=$apiKey&units=metric');
 
     final weatherData = await networkHelper.getWeatherData();
 
